@@ -68,7 +68,7 @@
 	        return;
 	    }
 	
-	    f.action = "${pageContext.request.contextPath}/";
+	    f.action = "${pageContext.request.contextPath}/member/login";
 	    f.submit();
 	}
 </script>
@@ -112,7 +112,7 @@
                     <div>
                         <p class="form-control-plaintext mb-0">
                         	아직 회원이 아니세요 ?
-                        	<a href="${pageContext.request.contextPath}/" class="text-decoration-none">회원가입</a>
+                        	<a href="${pageContext.request.contextPath}/member/member" class="text-decoration-none">회원가입</a>
                         </p>
                     </div>
                 </div>

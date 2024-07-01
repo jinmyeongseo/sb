@@ -18,12 +18,12 @@
 									<a href="javascript:dialogLogin();" title="로그인"><i class="bi bi-lock"></i></a>
 								</div>
 								<div class="p-2">
-									<a href="${pageContext.request.contextPath}/" title="회원가입"><i class="bi bi-person-plus"></i></a>
+									<a href="${pageContext.request.contextPath}/member/member" title="회원가입"><i class="bi bi-person-plus"></i></a>
 								</div>	
 							</c:when>
 							<c:otherwise>
 								<div class="p-2">
-									<a href="${pageContext.request.contextPath}/" title="로그아웃"><i class="bi bi-unlock"></i></a>
+									<a href="${pageContext.request.contextPath}/member/logout" title="로그아웃"><i class="bi bi-unlock"></i></a>
 								</div>					
 								<div class="p-2">
 									<a href="#" title="알림"><i class="bi bi-bell"></i></a>
@@ -63,8 +63,8 @@
 							커뮤니티
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">방명록</a></li>
-							<li><a class="dropdown-item" href="#">게시판</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/guest/main">방명록</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/bbs/list">게시판</a></li>
 							<li><a class="dropdown-item" href="#">답변형 게시판</a></li>
 							<li><a class="dropdown-item" href="#">포토갤러리</a></li>
 							<li><hr class="dropdown-divider"></li>
@@ -77,13 +77,13 @@
 							강좌
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">프로그래밍</a></li>
-							<li><a class="dropdown-item" href="#">데이터베이스</a></li>
-							<li><a class="dropdown-item" href="#">웹 프로그래밍</a></li>
-							<li><a class="dropdown-item" href="#">데이터분석 및 AI</a></li>
-							<li><a class="dropdown-item" href="#">클라우드 및 기타</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/lecture/L100001">프로그래밍</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/lecture/L100002">데이터베이스</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/lecture/L100003">웹 프로그래밍</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/lecture/L100004">데이터분석 및 AI</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/lecture/L100005">클라우드 및 기타</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">질문과 답변</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/qna/list">질문과 답변</a></li>
 						</ul>
 					</li>
 					
@@ -109,9 +109,9 @@
 							<li><a class="dropdown-item" href="#">사진첩</a></li>
 							<li><a class="dropdown-item" href="#">쪽지함</a></li>
 							<li><a class="dropdown-item" href="#">친구관리</a></li>
-							<li><a class="dropdown-item" href="#">메일</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/mail/send">메일</a></li>
 							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">정보수정</a></li>
+							<li><a class="dropdown-item" href="${pageContext.request.contextPath}/member/pwd">정보수정</a></li>
 						</ul>
 					</li>
 					
