@@ -55,8 +55,8 @@ function searchList() {
 							<td>${dto.hitCount}</td>
 							<td>
 								<c:if test="${not empty dto.saveFilename}">
-									<a href="${pageContext.request.contextPath}/bbs/download?num=${dto.num}"><i class="bi bi-file-arrow-down"></i></a>
-								</c:if>	
+									<a href="${pageContext.request.contextPath}/bbs/download?num=${dto.num}" class="text-reset"><i class="bi bi-file-arrow-down"></i></a>
+								</c:if>
 							</td>
 						</tr>
 					</c:forEach>
@@ -64,7 +64,7 @@ function searchList() {
 			</table>
 			
 			<div class="page-navigation">
-				${paging}
+				${dataCount==0? "등록된 게시글이 없습니다." : paging }
 			</div>
 
 			<div class="row board-list-footer">

@@ -11,13 +11,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sp.app.domain.SessionInfo;
 
-
 /*
- - HandlerInterceptor
-   : 컨트롤러가 요청을 받기 전과 요청을 처리한 후에 반복적인 기능을 수행할 수 있도록 하기 위한 인터페이스
-   : 서블릿의 필터와 유사
-   : 인터셉터를 적용하기 위해서는 HandlerInterceptor를 등록해야 한다.
- */
+  - HandlerInterceptor
+    : 컨트롤러가 요청을 받기 전과 요청을 처리한후에 반복적인 기능을 수행할 수 있도록 하기 위한 인터페이스
+    : 서블릿의 필터와 유사
+    : 인터셉터를 적용하기 위해서는 HandlerInterceptor를 등록해야 한다.
+*/
+
 public class LoginCheckInterceptor implements HandlerInterceptor {
 	private final Logger logger = LoggerFactory.getLogger(LoginCheckInterceptor.class);
 	
@@ -66,35 +66,37 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
 					response.sendRedirect(cp + "/member/noAuthorized");
 				}
 			}
+			
 		} catch (Exception e) {
 			logger.info("pre : " + e.toString());
 		}
+		
+		
 		return flag;
 	}
-	
+
 	/*
 	 * 클라이언트 요청 처리 후 실행
-	 * 클라이언트 요청 처리 중 예외가 발생하면 실행 하지 않음 
+	 * 클라이언트 요청 처리 중 예외가 발생하면 실행 하지 않음
 	 */
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 	}
-	
+
 	/*
 	 * 클라이언트 요청 처리 후 실행
-	 * 클라이언트 요청 처리 중 또는 뷰를 생성하는 과정에서 예외가 발생해도 실행 
+	 * 클라이언트 요청 처리 중 또는 뷰를 생성하는 과정에서 예외가 발생해도 실행
 	 */
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
 	}
 	
-	// AJAX 요청인지를 확인하기 위해 메소드
+	// AJAX 요청인지를 확인하기 위한 메소드
 	private boolean isAjaxRequest(HttpServletRequest req) {
 		String h = req.getHeader("AJAX");
 		return h != null && h.equals("true");
 	}
-	
-	
+
 }

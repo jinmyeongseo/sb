@@ -11,10 +11,9 @@ import com.sp.app.mapper.GuestMapper;
 
 @Service
 public class GuestServiceImpl implements GuestService {
-	
 	@Autowired
 	private GuestMapper mapper;
-	
+
 	@Override
 	public void insertGuest(Guest dto) throws Exception {
 		try {
@@ -26,6 +25,32 @@ public class GuestServiceImpl implements GuestService {
 	}
 
 	@Override
+	public List<Guest> listGuest(Map<String, Object> map) {
+		List<Guest> list = null;
+
+		try {
+			list = mapper.listGuest(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+
+	@Override
+	public int dataCount() {
+		int result = 0;
+
+		try {
+			result = mapper.dataCount();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	@Override
 	public void deleteGuest(Map<String, Object> map) throws Exception {
 		try {
 			mapper.deleteGuest(map);
@@ -33,29 +58,5 @@ public class GuestServiceImpl implements GuestService {
 			e.printStackTrace();
 			throw e;
 		}
-		
 	}
-
-	@Override
-	public int dataCount() {
-		int result = 0;
-		try {
-			result = mapper.dataCount();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	@Override
-	public List<Guest> listGuest(Map<String, Object> map) {
-		List<Guest> list = null;
-		try {
-			list = mapper.listGuest(map);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-
 }

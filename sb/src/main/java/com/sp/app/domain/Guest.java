@@ -44,6 +44,4 @@ public class Guest {
 	public void setDeletePermit(boolean deletePermit) {
 		this.deletePermit = deletePermit;
 	}
-	
-	
 }
